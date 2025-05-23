@@ -3,9 +3,10 @@
 
 # Upgrade Instructions
 
-This section points out some actions to take after the upgrade to **Outbreak Response Framework** `v2.1.0`.
+This section points out some actions to take after the upgrade to **Outbreak Response Framework** `v2.1.0` and later:
 
-> **IMPORTANT**: Follow these instructions closely and do not skip.
+> [!IMPORTANT]
+> Follow these instructions closely and do not skip.
 
 ## Prerequisites
 

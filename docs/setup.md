@@ -9,6 +9,7 @@
 4. Click **Install** on the lower part of the screen to begin the installation.
 
 ## Prerequisites
+
 The **Outbreak Response Framework** solution pack depends on the following solution packs. These solution packs are installed automatically &ndash; if not already installed.
 
 | Name                     | Type          | Version           | Purpose                                |
@@ -22,6 +23,8 @@ The **Outbreak Response Framework** solution pack depends on the following solut
 ## Install and Configure Connectors
 For optimal performance of the **Outbreak Response Framework** solution pack, install and configure the following connectors:
 
+- **NIST National Vulnerability Database** - The NIST National Vulnerability Database (NVD) is the U.S. government repository of standards-based vulnerability management data represented using the Security Content Automation Protocol (SCAP). This data enables automation of vulnerability management, security measurement, and compliance. The NVD includes databases of security checklist references, security-related software flaws, misconfigurations, product names, and impact metrics. To configure and use the NIST National Vulnerability Database connector, refer to [Configuring NIST National Vulnerability Database](https://docs.fortinet.com/fortisoar/connectors/nist-nvd)
+
 - **Fortinet FortiGuard Outbreak** - Fortinet FortiGuard Outbreak connector receives communication with *FortiGuard Outbreak Alerts* regarding regarding an outbreak and its details. These alerts help understand the technical details of the attack and how organizations can protect themselves from the attack and others like it. To configure and use the Fortinet FortiGuard Outbreak connector, refer to [Configuring Fortinet FortiGuard Outbreak](https://docs.fortinet.com/fortisoar/connectors/fortinet-fortiGuard-outbreak)
 
 - **Fortinet FortiAnalyzer** - FortiAnalyzer is the NOC-SOC security analysis tool built with an operations perspective. FortiAnalyzer (FAZ) supports analytics-powered use cases to provide better detection against breaches. To configure and use the Fortinet FortiAnalyzer connector, refer to [Configuring Fortinet FortiAnalyzer](https://docs.fortinet.com/fortisoar/connectors/fortianalyzer)
@@ -30,7 +33,6 @@ For optimal performance of the **Outbreak Response Framework** solution pack, in
 
 - **IBM QRadar** - IBM QRadar SIEM helps your business by detecting anomalies, uncovering advanced threats, and removing false positives. It consolidates log events and network flow data from thousands of devices, endpoints, and applications distributed throughout a network. To configure and use the IBM QRadar connector, refer to [Configuring IBM QRadar](https://docs.fortinet.com/fortisoar/connectors/ibm_qradar)
 
-- **NIST National Vulnerability Database** - The NIST National Vulnerability Database (NVD) is the U.S. government repository of standards-based vulnerability management data represented using the Security Content Automation Protocol (SCAP). This data enables automation of vulnerability management, security measurement, and compliance. The NVD includes databases of security checklist references, security-related software flaws, misconfigurations, product names, and impact metrics. To configure and use the NIST National Vulnerability Database connector, refer to [Configuring NIST National Vulnerability Database](https://docs.fortinet.com/fortisoar/connectors/nist-nvd)
 
 - **Splunk** - Splunk connector allows users to invoke search, fetch events to related search, invoke alert actions, update notables, sync Splunk users to FortiSOAR, etc. To configure and use the Splunk connector, refer to [Configuring Splunk](https://docs.fortinet.com/fortisoar/connectors/splunk_new)
 
@@ -40,11 +42,16 @@ After installation of the **Outbreak Response Framework** solution pack, run the
 
 1. Log in to FortiSOAR, after [installation](#installation) completes.
 
-2. Click the button **Configure** from the lower-left of the screen.
+2. Navigate to **Outbreak Management** > **Outbreak Alerts**.
 
-    ![Outbreak Response start configuration](./res/config-wizard-00.png)
+3. Click the button **Setup Outbreak Response Framework** on the configuration page.
 
-3. Click the button **Let's get started** on the Outbreak Response Framework configuration page.
+    -   Alternatively, you can click the button **Configure** from the lower-left of the screen.
+
+        |![Outbreak Response configuration start page](./res/config-wizard-00-b.png)|![Outbreak Response start configuration](./res/config-wizard-00.png)|
+        |:-:|:-:|
+
+4. Click the button **Setup Outbreak Response Framework** on the Outbreak Response Framework configuration page.
 
     ![Outbreak Alert get started](./res/config-wizard-01.png)
 
@@ -76,10 +83,13 @@ After installation of the **Outbreak Response Framework** solution pack, run the
 
     ![Installation and notification page](./res/config-wizard-05.png)
 
-    - **Auto Installation Criteria**: Select the severity of the outbreak to install the corresponding solution pack. You can select one or more severity from the following options:
-        - *Critical*
-        - *High*
-        - *Medium*
+    - **Auto Installation Criteria**: Select one of the following options:
+        - **Install Selected Outbreak Response Solution Packs**:  
+    Select the severity, and the last `X` days, of the outbreak to install the corresponding solution pack. You can select one or more severity from the following options:
+            - *Critical*
+            - *High*
+            - *Medium*
+        - **Install All Outbreak Response Solution Packs**: Select to install all outbreak response solution packs. 
 
     - **Outbreak Alert Update Notification**:  Specify email addresses authorized to receive outbreak updates. You can specify multiple email addresses separated by a comma.
 
