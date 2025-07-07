@@ -38,6 +38,9 @@ For optimal performance of the **Outbreak Response Framework** solution pack, in
 
 ## Setup Outbreak Response Framework on FortiSOAR
 
+> [!Important]
+> After an upgrade, you must run the **Outbreak Response Framework** configuration wizard again.
+
 After installation of the **Outbreak Response Framework** solution pack, run the configuration wizard to ready your FortiSOAR environment to investigate Outbreak Alerts. This wizard helps you select and configure **Threat Detection Integrations** on FortiSOAR.
 
 1. Log in to FortiSOAR, after [installation](#installation) completes.

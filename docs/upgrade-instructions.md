@@ -14,6 +14,9 @@ This section points out some actions to take after the upgrade to **Outbreak Res
 
 ## After Upgrade
 
+> [!Important]
+> After an upgrade, you must run the **Outbreak Response Framework** configuration wizard again.
+
 ### Deleting Duplicate Threat Feeds
 
 With the release of the **Outbreak Response Framework** solution pack `v2.1.0` and later, the field *Type* in Threat Intel Feeds is mapped to specific hash type (*`FileHash-MD5`*, *`FileHash-SHA1`*, and *`FileHash-SHA256`*) instead of the generic *`FileHash`*. This change results in ingestion and creation of duplicate threat feeds for outbreak alerts with the status *`Tracking`* since the uniqueness constraint on threat feeds is the combination (AND) of the fields **Value, Type, and Source** instead of just **Value**.

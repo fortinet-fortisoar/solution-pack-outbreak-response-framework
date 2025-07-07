@@ -9,10 +9,12 @@ Enhance your outbreak response playbook with expanded threat context, smarter au
 
 ### Wizard Enhancements
 
-The **Installation & Notification** screen now appears with additional options.
-- You can specify the time window for fetching and installing recent outbreak response solution packs &mdash; streamlining automation and reducing noise from outdated threats.
+- Additional options on the **Installation & Notification** screen:
+  - You can specify the time window for fetching and installing recent outbreak response solution packs &mdash; streamlining automation and reducing noise from outdated threats.
 
-- You can also choose to install all outbreak response solution packs released to date, providing full historical coverage when needed.
+  - You can also choose to install all outbreak response solution packs released to date, providing full historical coverage when needed.
+
+- The wizard now supports configuring the connector on an agent.
 
 ---
 
