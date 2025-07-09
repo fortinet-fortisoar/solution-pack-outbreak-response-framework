@@ -36,73 +36,102 @@ For optimal performance of the **Outbreak Response Framework** solution pack, in
 
 - **Splunk** - Splunk connector allows users to invoke search, fetch events to related search, invoke alert actions, update notables, sync Splunk users to FortiSOAR, etc. To configure and use the Splunk connector, refer to [Configuring Splunk](https://docs.fortinet.com/fortisoar/connectors/splunk_new)
 
-## Setup Outbreak Response Framework on FortiSOAR
+## Setting up Outbreak Response Framework on FortiSOAR
+
+After installation of the **Outbreak Response Framework** solution pack, run the configuration wizard to ready your FortiSOAR environment to investigate Outbreak Alerts. This wizard helps you select and configure **Threat Detection Integrations** on FortiSOAR.
 
 > [!Important]
 > After an upgrade, you must run the **Outbreak Response Framework** configuration wizard again.
 
-After installation of the **Outbreak Response Framework** solution pack, run the configuration wizard to ready your FortiSOAR environment to investigate Outbreak Alerts. This wizard helps you select and configure **Threat Detection Integrations** on FortiSOAR.
+You can launch the Outbreak Response Framework configuration wizard by any of the following methods:
 
-1. Log in to FortiSOAR, after [installation](#installation) completes.
+1. **From navigation menu**
+    - Navigate to **Outbreak Management** > **Outbreak Alerts**, if running the wizard for the first time.
 
-2. Navigate to **Outbreak Management** > **Outbreak Alerts**.
+        ![Outbreak Response configuration start page](./res/config-wizard-00-b.png)
 
-3. Click the button **Setup Outbreak Response Framework** on the configuration page.
+2. **From Content Hub**
+    1. Navigate to **Resources** > **Content Hub**
+    2. Search for **Outbreak Response Framework**
+    3. Click the *Outbreak Response Framework* card
+    4. Click the button **Configure** from the lower-left of the screen.
 
-    -   Alternatively, you can click the button **Configure** from the lower-left of the screen.
+        ![Outbreak Response start configuration](./res/config-wizard-00.png)        
 
-        |![Outbreak Response configuration start page](./res/config-wizard-00-b.png)|![Outbreak Response start configuration](./res/config-wizard-00.png)|
-        |:-:|:-:|
+> [!NOTE]
+> The configuration wizard can be **re-launched** only from *Content Hub*.
 
-4. Click the button **Setup Outbreak Response Framework** on the Outbreak Response Framework configuration page.
+### Launching the Outbreak Response Framework Configuration Wizard
 
-    ![Outbreak Alert get started](./res/config-wizard-01.png)
+Click the button **Setup Outbreak Response Framework** on the Outbreak Response Framework configuration page.
 
-4. **Select Integrations**
+![Outbreak Alert get started](./res/config-wizard-01.png)
+
+### Selecting Integrations
     
-    - Select Threat Detection Integration sources to run outbreak response hunt activities and click **Next**.
+Select Threat Detection Integration sources to run outbreak response hunt activities and click **Next**.
 
-        The hunt activities require searching for adversaries and their tactics, within an environment, against existing information available in the Threat Intel Platform's database (TIP). The Threat Detection Integration sources help run the threat hunt activities and are an important part of the *Outbreak Response Framework*.
+The hunt activities require searching for adversaries and their tactics, within an environment, against existing information available in the Threat Intel Platform's database (TIP). The Threat Detection Integration sources help run the threat hunt activities and are an important part of the *Outbreak Response Framework*.
 
-    ![Select Integrations page](./res/config-wizard-02.png)
+![Select Integrations page](./res/config-wizard-02.png)
 
-5. **Configure Integrations**
+### Configuring Integrations
 
-    - Select each integration's tab to configure the associated connector and data ingestion parameters. 
+Select each integration's tab to configure the associated connector and data ingestion parameters. The page has separate tabs for each integration selected as a threat detection source:
 
-        The page has separate tabs for each integration selected as a threat detection source:
+- **Configure the NIST NVD connector**: Refer to [NIST NVD](https://docs.fortinet.com/fortisoar/connectors/nist-nvd) connector documentation for more information.
 
-    ![Configure Integrations page](./res/config-wizard-03.gif)
+    ![Configure NIST Integration page](./res/config-wizard-03-nist.png)
 
-6. **Investigation Schedule**
+- **Configure the Fortinet FortiAnalyzer**: Refer to [NIST NVD](https://docs.fortinet.com/fortisoar/connectors/fortianalyzer) connector documentation for more information.
 
-    ![Investigation Schedule page](./res/config-wizard-04.png)
+    You can also configure the Fortinet FortiAnalyzer connector on agent. To run FortiAnalyzer connector actions using an agent, you need the following:
 
-    - **Threat Hunt Window**: Specify the number of days as an interval within which outbreak should be considered for investigation.
+    - **A virtual machine (VM) in the FortiAnalyzer network**: Refer to [recommended specifications](https://docs.fortinet.com/document/fortisoar/7.6.2/deployment-guide/158469/deploying-fortisoar#Recommended_specifications_for_FSR_agents) and [Prerequisites](https://docs.fortinet.com/document/fortisoar/7.6.2/deployment-guide/158469/deploying-fortisoar#Prerequisites_for_installing_an_FSR_agent) for installing an agent sections in FortiSOAR product document.
 
-    - **Investigation Frequency**:  Select the frequency of the investigation to create a schedule. The created schedule can be found under *Automation* > *Schedules*. Once created, the schedule periodically runs the investigation on the reported outbreaks at the specified frequency.
+    - **Adding the agent**: Refer to [Adding an agent](https://docs.fortinet.com/document/fortisoar/7.6.2/deployment-guide/158469/deploying-fortisoar#Adding_an_FSR_agent) on FortiSOAR product documentation.
 
-7. **Installation & Notification**
+    - **Installing agent on the VM**: Refer to [Installing an Agent](https://docs.fortinet.com/document/fortisoar/7.6.2/deployment-guide/158469/deploying-fortisoar#Installing_an_FSR_Agent) on FortiSOAR product documentation.
 
-    ![Installation and notification page](./res/config-wizard-05.png)
+    - **Installing the Fortinet FortiAnalyzer connector on Agent**: Refer to [Installing a connector on an FSR agent](https://docs.fortinet.com/document/fortisoar/7.6.2/administration-guide/204303/segmented-network-support#Installing_a_connector_on_an_FSR_agent) on FortiSOAR product documentation.
+    
+    If the agent is installed and configured, it appears under the Select Configuration drop-down.
 
-    - **Auto Installation Criteria**: Select one of the following options:
-        - **Install Selected Outbreak Response Solution Packs**:  
-    Select the severity, and the last `X` days, of the outbreak to install the corresponding solution pack. You can select one or more severity from the following options:
-            - *Critical*
-            - *High*
-            - *Medium*
-        - **Install All Outbreak Response Solution Packs**: Select to install all outbreak response solution packs. 
+    ![Configure Fortinet FortiAnalyzer Integration page](./res/config-wizard-03-faz-1.png)
 
-    - **Outbreak Alert Update Notification**:  Specify email addresses authorized to receive outbreak updates. You can specify multiple email addresses separated by a comma.
+    Select the default target and configuration to use when Outbreak Management executes the Fortinet FortiAnalyzer connector's actions.
 
-8. **Summary**
+    ![Specify Fortinet FortiAnalyzer configuration to use](./res/config-wizard-03-faz-2.png)
 
-    Click the button **Ingest Now** to install the outbreak-specific response solution packs of the severity selected on the previous screen.
+### Investigation Schedule
 
-    Click **Finish** to complete the configuration process.
+![Investigation Schedule page](./res/config-wizard-04.png)
 
-    ![All set](./res/config-wizard-06.png)
+- **Threat Hunt Window**: Specify the number of days as an interval within which outbreak should be considered for investigation.
+
+- **Investigation Frequency**:  Select the frequency of the investigation to create a schedule. The created schedule can be found under *Automation* > *Schedules*. Once created, the schedule periodically runs the investigation on the reported outbreaks at the specified frequency.
+
+### Installation & Notification
+
+![Installation and notification page](./res/config-wizard-05.png)
+
+- **Auto Installation Criteria**: Select one of the following options:
+    - **Install Selected Outbreak Response Solution Packs**:  
+Select the severity, and the last `X` days, of the outbreak to install the corresponding solution pack. You can select one or more severity from the following options:
+        - *Critical*
+        - *High*
+        - *Medium*
+    - **Install All Outbreak Response Solution Packs**: Select to install all outbreak response solution packs. 
+
+- **Outbreak Alert Update Notification**:  Specify email addresses authorized to receive outbreak updates. You can specify multiple email addresses separated by a comma.
+
+### Summary
+
+Click the button **Ingest Now** to install the outbreak-specific response solution packs of the severity selected on the previous screen.
+
+Click **Finish** to complete the configuration process.
+
+![All set](./res/config-wizard-06.png)
 
 # Next Steps
 

@@ -3,7 +3,7 @@
 - **Version**: 2.2.0![](./docs/res/icon-preview.svg)
 - **Certified**: Yes
 - **Publisher**: Fortinet
-- **Compatible Version**: 7.6.2 and later
+- **Compatible Version**: 7.6.1 and later
 - [Release Notes](./release_notes.md)
  
 >[!NOTE]
